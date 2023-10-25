@@ -18,67 +18,67 @@
 
 2.  How would you create a reusable component in React? Can you provide an example?
 
-    ```
-    import React from 'react';
+```
+import React from 'react';
 
-    const ReusableButton = ({ text, onClick }) => {
-    return (
-        <button onClick={onClick}>{text}</button>
-    );
-    };
+const ReusableButton = ({ text, onClick }) => {
+return (
+    <button onClick={onClick}>{text}</button>
+);
+};
 
-    export default ReusableButton;
-    ```
+export default ReusableButton;
+```
 
-    You can then use this ReusableButton component in other parts of your application, passing different text and onClick props as needed.
+You can then use this ReusableButton component in other parts of your application, passing different text and onClick props as needed.
 
 3.  How do you handle state in React? What are some common pitfalls to avoid when working
     with state in React?
 
-        In React functional components, state is managed using the useState hook. Here's an example:
+    In React functional components, state is managed using the useState hook. Here's an example:
 
-        ```
         import React, { useState } from 'react';
 
         function Counter() {
-        const [count, setCount] = useState(0);
+            const [count, setCount] = useState(0);
 
-        const increment = () => {
-            setCount(count + 1);
-        }
+            const increment = () => {
+                setCount(count + 1);
+            }
 
-        return (
-            <div>
-            <p>Count: {count}</p>
-            <button onClick={increment}>Increment</button>
-            </div>
-        );
+            return (
+                <div>
+                    <p>Count: {count}</p>
+                    <button onClick={increment}>Increment</button>
+                </div>
+            );
         }
         ```
-        Common pitfalls to avoid when working with state in React functional components include not understanding the asynchronous nature of state updates, failing to use the functional form of setState for dependent state updates, and overusing state for data that doesn't need to trigger re-renders. Additionally, it's important to avoid mutating state directly and to ensure proper initialization of state variables to prevent unexpected behavior.
+
+Common pitfalls to avoid when working with state in React functional components include not understanding the asynchronous nature of state updates, failing to use the functional form of setState for dependent state updates, and overusing state for data that doesn't need to trigger re-renders. Additionally, it's important to avoid mutating state directly and to ensure proper initialization of state variables to prevent unexpected behavior.
 
 4.  Explain the difference between props and state in React. When would you use one over the
     other?
 
-        - Props:
+    - Props:
 
-            Read-Only: Props are passed to a component and remain read-only. Components cannot directly modify their props.
+      Read-Only: Props are passed to a component and remain read-only. Components cannot directly modify their props.
 
-            External Data: Props are used to pass external data into a component from a parent or a higher-level component.
+      External Data: Props are used to pass external data into a component from a parent or a higher-level component.
 
-            Use Cases: Ideal for data that doesn't change within the component, e.g., configuration, content, or data from parent components.
+      Use Cases: Ideal for data that doesn't change within the component, e.g., configuration, content, or data from parent components.
 
-        - State:
+    - State:
 
-            Mutable: State is used for managing mutable data within a component. Components can update and maintain their own state.
+      Mutable: State is used for managing mutable data within a component. Components can update and maintain their own state.
 
-            Internal Data: State holds internal component-specific data that may change during its lifecycle.
+      Internal Data: State holds internal component-specific data that may change during its lifecycle.
 
-            Use Cases: Suitable for data that needs to trigger re-renders and may change over time, like form input values, counters, or UI-related data.
+      Use Cases: Suitable for data that needs to trigger re-renders and may change over time, like form input values, counters, or UI-related data.
 
-        - When to use?
+    - When to use?
 
-            props are used to pass data from a parent component, while state is used to manage and update internal data that can change over time within the component.
+      props are used to pass data from a parent component, while state is used to manage and update internal data that can change over time within the component.
 
 5.  How would you optimize the performance of a React application? Can you provide some examples of techniques you might use?
 
